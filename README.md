@@ -34,6 +34,10 @@
 
 ![Реконструкция баг-трекера конфликтов](docs/images/web-conflict-tracker-mock.png)
 
+Реконструкция ведомости занятий, которую часто использовали старосты:
+
+![Реконструкция ведомости занятий](docs/images/web-statement-mock.png)
+
 ## Куда смотреть в коде
 
 - Основной batch-сценарий парсинга папок и отдельных файлов: [`legacy-parser/ConsoleParser/Program.cs`](legacy-parser/ConsoleParser/Program.cs#L35-L111).
@@ -43,6 +47,7 @@
 - Запись результата в нормализованную MySQL-БД, дедупликация по MD5 и пометка старых файлов: [`WriterDB.cs`](legacy-parser/ConsoleParser/WriterDB.cs#L40-L96).
 - Обработка обновлений расписания через "наслаивание" новых Excel-файлов поверх старых записей: [`Layering()`](legacy-parser/ConsoleParser/WriterDB.cs#L163-L200).
 - Поиск конфликтов расписания и недельный "Баг-трекер": [`docs/CONFLICT_DETECTION.md`](docs/CONFLICT_DETECTION.md).
+- Ведомость занятий, которую часто использовали старосты: [`docs/STATEMENT.md`](docs/STATEMENT.md).
 - Тестовые примеры распознавания ячеек, дат и времени: [`Tester/UnitTest1.cs`](legacy-parser/Tester/UnitTest1.cs#L12-L116).
 - PHP-вывод расписания для группы: [`legacy-web/functions.php`](legacy-web/functions.php#L498-L536).
 - Простая маршрутизация веб-интерфейса: [`legacy-web/index.php`](legacy-web/index.php#L73-L99).
