@@ -57,6 +57,7 @@
 - Поиск конфликтов расписания и недельный "Баг-трекер": [`docs/CONFLICT_DETECTION.md`](docs/CONFLICT_DETECTION.md).
 - Журнал занятий, которым пользовались старосты: [`docs/JOURNAL.md`](docs/JOURNAL.md).
 - Ведомость занятий для деканата и учета часов преподавателей: [`docs/STATEMENT.md`](docs/STATEMENT.md).
+- Discord-интеграция для удаленных занятий во время COVID-19: [`docs/DISCORD_COVID.md`](docs/DISCORD_COVID.md).
 - Расписание кабинета и аналитика использования пространства института: [`docs/CABINET_ANALYTICS.md`](docs/CABINET_ANALYTICS.md).
 - Тестовые примеры распознавания ячеек, дат и времени: [`Tester/UnitTest1.cs`](legacy-parser/Tester/UnitTest1.cs#L12-L116).
 - PHP-вывод расписания для группы: [`legacy-web/functions.php`](legacy-web/functions.php#L498-L536).
