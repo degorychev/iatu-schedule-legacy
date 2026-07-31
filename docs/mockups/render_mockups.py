@@ -204,8 +204,52 @@ def render_statement_mock():
         y += 42
 
     rect(draw, (x0, y + 24, x0 + 1450, y + 72), (217, 237, 247), (188, 232, 241))
-    text(draw, (x0 + 18, y + 39), "Сценарий старост: быстро получить основу ведомости по преподавателю вместо ручного подсчета занятий по Excel.", font_b, (49, 112, 143))
+    text(draw, (x0 + 18, y + 39), "Сценарий деканата: быстро получить основу ведомости по преподавателю и видам учебных часов.", font_b, (49, 112, 143))
     image.save(OUT / "web-statement-mock.png")
+
+
+def render_journal_mock():
+    width, height = 1280, 880
+    image = Image.new("RGB", (width, height), "white")
+    draw = ImageDraw.Draw(image)
+    navbar(draw, width, "Расписание | ИАТУ")
+
+    rect(draw, (380, 88, 560, 138), (255, 255, 255), (204, 204, 204))
+    text(draw, (470, 104), "АИСТбд-31  v", font_b, (60, 60, 60), "ma")
+    rect(draw, (590, 88, 900, 138), (255, 255, 255), (204, 204, 204))
+    text(draw, (745, 104), "Базы данных  v", font_b, (60, 60, 60), "ma")
+
+    panel(draw, 70, 160, 1140, "Журнал занятий", "Группа АИСТбд-31 / Базы данных")
+
+    x0, y0 = 90, 285
+    col_widths = [48, 120, 95, 100, 260, 120, 110, 260]
+    headers = ["#", "Дата", "Время", "Тип", "Преподаватель", "Кабинет", "Подгруппа", "Отчет"]
+    x = x0
+    for col_width, header in zip(col_widths, headers):
+        rect(draw, (x, y0, x + col_width, y0 + 42), (245, 245, 245), (190, 190, 190))
+        text(draw, (x + 7, y0 + 13), header, font_sm_b)
+        x += col_width
+
+    rows = [
+        ["1", "14.09.2020", "10:00", "лек.", "Камалов Л.Е.", "Discord", "0", "отчет: 24 человека"],
+        ["2", "21.09.2020", "10:00", "пр.", "Камалов Л.Е.", "Discord", "1", "отчет: 22 человека"],
+        ["3", "28.09.2020", "10:00", "пр.", "Камалов Л.Е.", "413", "1", ""],
+        ["4", "05.10.2020", "10:00", "лек.", "Камалов Л.Е.", "413", "0", ""],
+    ]
+
+    y = y0 + 42
+    for idx, row in enumerate(rows):
+        fill = (223, 240, 216) if idx < 2 else (252, 248, 227)
+        x = x0
+        for col_width, value in zip(col_widths, row):
+            rect(draw, (x, y, x + col_width, y + 48), fill, (210, 210, 210))
+            text(draw, (x + 7, y + 15), value, font_sm)
+            x += col_width
+        y += 48
+
+    rect(draw, (90, y + 42, 1190, y + 96), (217, 237, 247), (188, 232, 241))
+    text(draw, (112, y + 60), "Сценарий старост: быстро увидеть занятия группы по дисциплине и перейти к отчету о посещаемости.", font_b, (49, 112, 143))
+    image.save(OUT / "web-journal-mock.png")
 
 
 def render_cabinet_schedule_mock():
@@ -255,4 +299,5 @@ if __name__ == "__main__":
     render_schedule_mock()
     render_conflict_mock()
     render_statement_mock()
+    render_journal_mock()
     render_cabinet_schedule_mock()
