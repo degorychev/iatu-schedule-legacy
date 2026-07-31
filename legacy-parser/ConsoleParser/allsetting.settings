@@ -1,0 +1,33 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ConsoleParser" GeneratedClassName="allsetting">
+  <Profiles />
+  <Settings>
+    <Setting Name="Server" Type="(Web Service URL)" Scope="User">
+      <Value Profile="(Default)">localhost</Value>
+    </Setting>
+    <Setting Name="Database" Type="System.String" Scope="User">
+      <Value Profile="(Default)">raspisanie</Value>
+    </Setting>
+    <Setting Name="User" Type="System.String" Scope="User">
+      <Value Profile="(Default)">schedule_user</Value>
+    </Setting>
+    <Setting Name="Password" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Logging" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="Log_Server" Type="System.String" Scope="User">
+      <Value Profile="(Default)">localhost</Value>
+    </Setting>
+    <Setting Name="After_Delete_File" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="homedir" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\schedule-parser\</Value>
+    </Setting>
+    <Setting Name="homedirlinux" Type="System.String" Scope="User">
+      <Value Profile="(Default)">/opt/schedule-parser/</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
