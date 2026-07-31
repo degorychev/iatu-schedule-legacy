@@ -208,7 +208,51 @@ def render_statement_mock():
     image.save(OUT / "web-statement-mock.png")
 
 
+def render_cabinet_schedule_mock():
+    width, height = 1280, 900
+    image = Image.new("RGB", (width, height), "white")
+    draw = ImageDraw.Draw(image)
+    navbar(draw, width, "Расписание | ИАТУ")
+
+    rect(draw, (530, 88, 750, 138), (255, 255, 255), (204, 204, 204))
+    text(draw, (640, 104), "413  v", font_b, (60, 60, 60), "ma")
+    panel(draw, 70, 160, 1140, "Среда, 02.02.2022", "Расписание кабинета 413")
+    text(draw, (90, 274), "← Предыдущий", font, (60, 118, 161))
+    text(draw, (1062, 274), "Следующий →", font, (60, 118, 161))
+
+    x0, y0 = 90, 325
+    col_widths = [48, 95, 130, 330, 80, 230, 95, 100]
+    headers = ["#", "Время", "Группа", "Дисциплина", "Тип", "Преподаватель", "Кабинет", "Подгруппа"]
+    x = x0
+    for col_width, header in zip(col_widths, headers):
+        rect(draw, (x, y0, x + col_width, y0 + 42), (245, 245, 245), (190, 190, 190))
+        text(draw, (x + 7, y0 + 13), header, font_sm_b)
+        x += col_width
+
+    rows = [
+        ["1", "8:30", "АИСТбд-21", "Базы данных", "лек.", "Камалов Л.Е.", "413", "0"],
+        ["2", "10:00", "АИСТбд-31", "Организация ЭВМ и систем", "лек.", "Попов Н.А.", "413", "0"],
+        ["3", "11:50", "АИСТбд-41", "Распределенные информ. системы", "пр.", "Попов Н.А.", "413", "0"],
+        ["4", "13:20", "АИСТбд-12", "Философия", "лек.", "Зиновьева Э.Н.", "413", "0"],
+    ]
+
+    y = y0 + 42
+    for idx, row in enumerate(rows):
+        fill = (223, 240, 216) if idx < 2 else (252, 248, 227)
+        x = x0
+        for col_width, value in zip(col_widths, row):
+            rect(draw, (x, y, x + col_width, y + 48), fill, (210, 210, 210))
+            text(draw, (x + 7, y + 15), value, font_sm)
+            x += col_width
+        y += 48
+
+    rect(draw, (90, y + 42, 1190, y + 96), (217, 237, 247), (188, 232, 241))
+    text(draw, (112, y + 60), "Этот разрез превращал расписание в данные о пространстве: загрузка кабинетов, маршруты групп, оценка людей в здании.", font_b, (49, 112, 143))
+    image.save(OUT / "web-cabinet-schedule-mock.png")
+
+
 if __name__ == "__main__":
     render_schedule_mock()
     render_conflict_mock()
     render_statement_mock()
+    render_cabinet_schedule_mock()

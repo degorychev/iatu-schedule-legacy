@@ -38,6 +38,10 @@
 
 ![Реконструкция ведомости занятий](docs/images/web-statement-mock.png)
 
+Реконструкция расписания кабинета - разреза, который позже давал основу для аналитики использования пространства института:
+
+![Реконструкция расписания кабинета](docs/images/web-cabinet-schedule-mock.png)
+
 ## Куда смотреть в коде
 
 - Основной batch-сценарий парсинга папок и отдельных файлов: [`legacy-parser/ConsoleParser/Program.cs`](legacy-parser/ConsoleParser/Program.cs#L35-L111).
@@ -48,6 +52,7 @@
 - Обработка обновлений расписания через "наслаивание" новых Excel-файлов поверх старых записей: [`Layering()`](legacy-parser/ConsoleParser/WriterDB.cs#L163-L200).
 - Поиск конфликтов расписания и недельный "Баг-трекер": [`docs/CONFLICT_DETECTION.md`](docs/CONFLICT_DETECTION.md).
 - Ведомость занятий, которую часто использовали старосты: [`docs/STATEMENT.md`](docs/STATEMENT.md).
+- Расписание кабинета и аналитика использования пространства института: [`docs/CABINET_ANALYTICS.md`](docs/CABINET_ANALYTICS.md).
 - Тестовые примеры распознавания ячеек, дат и времени: [`Tester/UnitTest1.cs`](legacy-parser/Tester/UnitTest1.cs#L12-L116).
 - PHP-вывод расписания для группы: [`legacy-web/functions.php`](legacy-web/functions.php#L498-L536).
 - Простая маршрутизация веб-интерфейса: [`legacy-web/index.php`](legacy-web/index.php#L73-L99).
