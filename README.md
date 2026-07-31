@@ -27,6 +27,7 @@
 - Разбор содержимого одной ячейки расписания через "самое длинное совпадение" по словарю: [`Yacheyka.cs`](legacy-parser/ConsoleParser/Yacheyka.cs#L57-L123).
 - Чтение структуры Excel для очного расписания: [`reader1.cs`](legacy-parser/ConsoleParser/reader1.cs#L13-L75).
 - Запись результата в нормализованную MySQL-БД, дедупликация по MD5 и пометка старых файлов: [`WriterDB.cs`](legacy-parser/ConsoleParser/WriterDB.cs#L40-L96).
+- Обработка обновлений расписания через "наслаивание" новых Excel-файлов поверх старых записей: [`Layering()`](legacy-parser/ConsoleParser/WriterDB.cs#L163-L200).
 - Тестовые примеры распознавания ячеек, дат и времени: [`Tester/UnitTest1.cs`](legacy-parser/Tester/UnitTest1.cs#L12-L116).
 - PHP-вывод расписания для группы: [`legacy-web/functions.php`](legacy-web/functions.php#L498-L536).
 - Простая маршрутизация веб-интерфейса: [`legacy-web/index.php`](legacy-web/index.php#L73-L99).
@@ -47,4 +48,3 @@
 Проект не поддерживается и не предназначен для запуска "из коробки". Некоторые зависимости старые, часть кода ориентирована на .NET Framework 4.5.2, MySQL и окружение 2017-2019 годов.
 
 Ценность репозитория - в демонстрации реального внедрения, работы с грязными данными и эволюции инженерного мышления.
-
