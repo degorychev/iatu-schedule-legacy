@@ -20,6 +20,20 @@
 
 Пример такого файла лежит здесь: [`samples/Informatsionnye_sistemy_i_tekhnologii.xls`](samples/Informatsionnye_sistemy_i_tekhnologii.xls).
 
+## Как это выглядело
+
+Фрагмент исходного Excel-файла, который нужно было превратить в структурированные данные:
+
+![Фрагмент исходного Excel-расписания](docs/images/source-excel-week-fragment.png)
+
+Реконструкция веб-интерфейса расписания с подсветкой проблемной пары:
+
+![Реконструкция страницы расписания](docs/images/web-schedule-mock.png)
+
+Реконструкция недельного баг-трекера конфликтов:
+
+![Реконструкция баг-трекера конфликтов](docs/images/web-conflict-tracker-mock.png)
+
 ## Куда смотреть в коде
 
 - Основной batch-сценарий парсинга папок и отдельных файлов: [`legacy-parser/ConsoleParser/Program.cs`](legacy-parser/ConsoleParser/Program.cs#L35-L111).

@@ -4,6 +4,8 @@
 
 Смотреть вход в меню: [`legacy-web/components/navbar.php`](../legacy-web/components/navbar.php#L16).
 
+![Реконструкция страницы баг-трекера](images/web-conflict-tracker-mock.png)
+
 ## Что проверялось
 
 В `functions.php` было четыре проверки:
